@@ -2,7 +2,7 @@
 
 **即梦 AI 的 MCP 服务** — 让 Claude、Cursor 等 AI 助手直接调用即梦的图片/视频生成能力。
 
-[English](#english) | 中文
+[English](README_EN.md) | 中文
 
 ---
 
@@ -210,75 +210,3 @@ uv run mcp dev src/jimeng_mcp/server.py
 ## License
 
 [MIT](LICENSE)
-
----
-
-## English
-
-**jimeng-mcp** is an MCP (Model Context Protocol) server for [Jimeng AI](https://jimeng.jianying.com/) (即梦 · ByteDance). It wraps the official Volcengine API, letting Claude, Cursor, and other MCP-compatible AI clients generate images and videos through natural language — no browser switching, no manual uploads, results saved locally.
-
-### What is MCP?
-
-[Model Context Protocol](https://modelcontextprotocol.io/) is an open standard by Anthropic that lets AI models call external tools and services through a standardized interface.
-
-### Tools
-
-| Tool | Description |
-|---|---|
-| `generate_image` | Text-to-image (4.0 / 4.6 / 3.x models) |
-| `image_to_image` | Image editing with text guidance |
-| `inpaint_image` | Local inpainting / object removal |
-| `upscale_image` | AI upscaling to 4K / 8K |
-| `generate_video` | Text-to-video (720P / 1080P / Pro) |
-| `image_to_video` | Image-to-video (first frame / first+last frame / camera movement / Pro) |
-| `imitate_motion` | Motion imitation 2.0 |
-| `generate_digital_human` | Talking head video — image + audio → lip-synced video (OmniHuman 1.5) |
-| `translate_video` | Video translation with lip-sync (2.0) |
-
-### Prerequisites
-
-1. Enable Jimeng AI in the [Volcengine Console](https://console.volcengine.com/ai/ability/detail/2)
-2. Get Access Key ID and Secret Access Key from [IAM Key Management](https://console.volcengine.com/iam/keymanage/)
-
-### Installation
-
-Recommended — run with `uvx` (no install needed):
-
-```bash
-uvx jimeng-ai-mcp
-```
-
-Or install with pip:
-
-```bash
-pip install jimeng-ai-mcp
-```
-
-### Setup (Claude Desktop)
-
-Config file location:
-- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "jimeng": {
-      "command": "uvx",
-      "args": ["jimeng-ai-mcp"],
-      "env": {
-        "JIMENG_ACCESS_KEY_ID": "your_access_key_id",
-        "JIMENG_SECRET_ACCESS_KEY": "your_secret_access_key"
-      }
-    }
-  }
-}
-```
-
-Restart Claude Desktop. Then just ask: *"Generate a cyberpunk cityscape, 16:9 widescreen."*
-
-### Resources
-
-- [Jimeng AI Open Platform (Official Docs)](https://www.volcengine.com/docs/85621/1544716?lang=zh)
-- [MCP Protocol](https://modelcontextprotocol.io/)
-- [Claude Desktop](https://claude.ai/download)
