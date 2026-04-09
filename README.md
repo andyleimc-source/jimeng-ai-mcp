@@ -93,6 +93,7 @@
 
 ```bash
 git clone https://github.com/andyleimc-source/jimeng-mcp
+
 cd jimeng-mcp
 cp .env.example .env
 # 用编辑器打开 .env，填入两个密钥
