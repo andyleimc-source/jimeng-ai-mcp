@@ -106,7 +106,7 @@ pip install jimeng-ai-mcp
 ### 本地开发模式
 
 ```bash
-git clone https://github.com/andyleimc-source/jimeng-mcp
+git clone https://github.com/andyleimc-source/jimeng-ai-mcp
 
 cd jimeng-mcp
 cp .env.example .env
